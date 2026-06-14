@@ -1,0 +1,84 @@
+.login-page {
+  width: min(720px, 92%);
+  margin: 0 auto;
+  padding: 40px 0 56px;
+}
+
+.login-card {
+  padding: 36px 32px;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.12), transparent 28%),
+    linear-gradient(135deg, var(--card-bg) 0%, var(--surface-elevated) 100%);
+  box-shadow: var(--shadow-soft);
+}
+
+.login-kicker {
+  margin: 0 0 12px;
+  color: var(--brand);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.login-card h1 {
+  margin: 0 0 14px;
+  color: var(--text-strong);
+}
+
+.login-text {
+  margin: 0 0 24px;
+  color: var(--text-soft);
+  line-height: 1.8;
+}
+
+.login-form {
+  display: grid;
+  gap: 18px;
+}
+
+.login-field {
+  display: grid;
+  gap: 8px;
+}
+
+.login-field span {
+  color: var(--text-strong);
+  font-weight: 700;
+}
+
+.login-field input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 14px;
+  background: var(--input-bg);
+  color: var(--text-strong);
+  font: inherit;
+}
+
+.login-error-message {
+  margin: -4px 0 0;
+  color: var(--danger-text);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.login-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .login-card {
+    padding: 24px 20px;
+    border-radius: 22px;
+  }
+
+  .login-actions > * {
+    width: 100%;
+  }
+}

@@ -1,0 +1,476 @@
+.counters-page {
+  width: min(1160px, 92%);
+  margin: 0 auto;
+  padding: 28px 0 56px;
+}
+
+.counter-panel {
+  padding: 38px 34px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top right, rgba(20, 184, 166, 0.14), transparent 28%),
+    linear-gradient(135deg, var(--card-bg) 0%, var(--surface-elevated) 100%);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+  animation: panel-fade-up 0.7s ease-out;
+}
+
+.counter-kicker {
+  margin: 0 0 12px;
+  color: var(--brand);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  animation: text-fade-in 0.7s ease-out;
+}
+
+.counter-panel h1 {
+  margin: 0 0 14px;
+  color: var(--text-strong);
+  animation: text-fade-in 0.85s ease-out;
+}
+
+.counter-description {
+  margin: 0 auto 24px;
+  max-width: 620px;
+  color: var(--text-soft);
+  animation: text-fade-in 1s ease-out;
+}
+
+.counter-goal-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 0 22px;
+  padding: 18px 20px;
+  border-radius: 20px;
+  background: var(--surface-elevated);
+  border: 1px solid var(--line);
+  text-align: left;
+}
+
+.counter-goal-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text-soft);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.counter-goal-card strong {
+  color: var(--text-strong);
+  font-size: 1.08rem;
+}
+
+.counter-goal-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--status-warning-bg);
+  color: var(--status-warning-text);
+  font-size: 0.84rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.counter-goal-badge.success {
+  background: var(--status-success-bg);
+  color: var(--status-success-text);
+}
+
+.counter-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0 0 24px;
+}
+
+.counter-summary-card {
+  padding: 18px;
+  border-radius: 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+  text-align: left;
+  animation: card-rise 0.7s ease-out both;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.counter-summary-card:hover,
+.counter-history-card:hover,
+.counter-note:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.12);
+  border-color: rgba(20, 184, 166, 0.2);
+}
+
+.card-delay-1 {
+  animation-delay: 0.05s;
+}
+
+.card-delay-2 {
+  animation-delay: 0.12s;
+}
+
+.card-delay-3 {
+  animation-delay: 0.19s;
+}
+
+.counter-summary-card span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-soft);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.counter-summary-card strong {
+  color: var(--text-strong);
+  font-size: 1.05rem;
+}
+
+.counter-display {
+  width: min(220px, 100%);
+  margin: 0 auto 24px;
+  padding: 24px 18px;
+  border-radius: 24px;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.counter-display span {
+  display: inline-block;
+  color: var(--text-strong);
+  font-size: clamp(2.6rem, 8vw, 4.5rem);
+  font-weight: 800;
+  animation: number-pop 0.28s ease-out;
+}
+
+.counter-display.glow-positive {
+  border-color: rgba(16, 185, 129, 0.32);
+  box-shadow:
+    0 12px 28px rgba(15, 23, 42, 0.08),
+    0 0 0 8px rgba(16, 185, 129, 0.08);
+  transform: translateY(-2px);
+}
+
+.counter-display.glow-negative {
+  border-color: rgba(239, 68, 68, 0.25);
+  box-shadow:
+    0 12px 28px rgba(15, 23, 42, 0.08),
+    0 0 0 8px rgba(239, 68, 68, 0.08);
+  transform: translateY(-2px);
+}
+
+.counter-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 22px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--surface-elevated);
+  color: var(--text-strong);
+  font-size: 0.92rem;
+  font-weight: 700;
+  animation: badge-fade 0.45s ease-out;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.counter-status.positive {
+  background: var(--status-success-bg);
+  color: var(--status-success-text);
+}
+
+.counter-status.negative {
+  background: var(--danger-soft);
+  color: var(--danger-text);
+}
+
+.counter-progress {
+  max-width: 460px;
+  margin: 0 auto 22px;
+}
+
+.counter-progress-bar {
+  width: 100%;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.counter-progress-bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--brand) 0%, #2dd4bf 100%);
+}
+
+.counter-progress-text {
+  margin: 10px 0 0;
+  color: var(--text-soft);
+  font-size: 0.92rem;
+}
+
+.counter-history {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 180px));
+  justify-content: center;
+  gap: 14px;
+  margin: 0 0 24px;
+}
+
+.counter-history-card {
+  padding: 18px 16px;
+  border-radius: 18px;
+  background: var(--surface-elevated);
+  border: 1px solid var(--line);
+  animation: card-rise 0.7s ease-out both;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.counter-history-card p {
+  margin: 0 0 8px;
+  color: var(--text-soft);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.counter-history-card strong {
+  color: var(--text-strong);
+  font-size: 1.5rem;
+}
+
+.counter-quick-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 0 0 20px;
+}
+
+.counter-chip {
+  padding: 10px 16px;
+  border: 1px solid color-mix(in srgb, var(--brand) 18%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brand) 10%, transparent);
+  color: var(--brand);
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    transform 0.22s ease,
+    background 0.22s ease,
+    border-color 0.22s ease,
+    color 0.22s ease;
+}
+
+.counter-chip:hover {
+  transform: translateY(-1px);
+  background: color-mix(in srgb, var(--brand) 16%, transparent);
+  border-color: color-mix(in srgb, var(--brand) 28%, transparent);
+}
+
+.counter-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.counter-reset-row {
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+}
+
+.counter-button {
+  min-width: 150px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 14px;
+  font-size: 0.96rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    background 0.22s ease,
+    color 0.22s ease;
+}
+
+.counter-button:active {
+  transform: scale(0.97);
+}
+
+.counter-button.primary {
+  background: var(--brand);
+  color: #ffffff;
+}
+
+.counter-button.primary:hover {
+  background: var(--brand-deep);
+  transform: translateY(-1px);
+}
+
+.counter-button.secondary {
+  background: var(--surface-soft);
+  color: var(--text-strong);
+}
+
+.counter-button.secondary:hover,
+.counter-button.neutral:hover {
+  background: var(--surface-hover);
+  transform: translateY(-1px);
+}
+
+.counter-button.neutral {
+  min-width: 120px;
+  background: var(--surface-muted);
+  color: var(--text-strong);
+  border: 1px solid var(--line);
+}
+
+.counter-note {
+  margin-top: 24px;
+  padding: 20px 22px;
+  border-radius: 20px;
+  background: var(--surface-elevated);
+  border: 1px solid var(--line);
+  text-align: left;
+  animation: card-rise 0.8s ease-out both;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.counter-note h2 {
+  margin: 0 0 10px;
+  color: var(--text-strong);
+  font-size: 1.05rem;
+}
+
+.counter-note p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+@keyframes panel-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes text-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes card-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes number-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.72);
+  }
+
+  70% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes badge-fade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .counter-panel {
+    padding: 26px 20px;
+    border-radius: 22px;
+  }
+
+  .counter-goal-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .counter-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .counter-history {
+    grid-template-columns: 1fr;
+  }
+
+  .counter-button {
+    width: 100%;
+  }
+}

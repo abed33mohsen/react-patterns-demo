@@ -1,0 +1,250 @@
+.router-page {
+  width: min(1160px, 92%);
+  margin: 0 auto;
+  padding: 28px 0 56px;
+}
+
+.router-hero {
+  display: grid;
+  grid-template-columns: 1.5fr 0.9fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.router-copy,
+.router-hero-card,
+.router-concept-card,
+.router-route-card,
+.router-notes {
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow-soft);
+  animation: router-fade-up 0.72s ease-out both;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.router-copy {
+  padding: 36px 32px;
+  background:
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.14), transparent 28%),
+    linear-gradient(135deg, var(--card-bg) 0%, var(--surface-elevated) 100%);
+}
+
+.router-kicker {
+  margin: 0 0 12px;
+  color: var(--brand);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.router-copy h1,
+.router-section-head h2 {
+  margin: 0 0 14px;
+  color: var(--text-strong);
+}
+
+.router-copy p,
+.router-hero-card p,
+.router-concept-card p,
+.router-route-card p,
+.router-notes p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.8;
+}
+
+.router-hero-card {
+  padding: 26px 24px;
+  display: grid;
+  align-content: center;
+  gap: 10px;
+}
+
+.router-hero-label,
+.router-route-label {
+  display: inline-block;
+  color: var(--brand);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.router-hero-card strong,
+.router-route-card strong {
+  color: var(--text-strong);
+  font-size: 1.1rem;
+}
+
+.router-section + .router-section {
+  margin-top: 24px;
+}
+
+.router-section-head {
+  margin-bottom: 16px;
+}
+
+.router-concepts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.router-concept-card {
+  padding: 22px 20px;
+}
+
+.router-concept-card h3 {
+  margin: 0 0 10px;
+  color: var(--text-strong);
+}
+
+.router-routes-list {
+  display: grid;
+  gap: 16px;
+}
+
+.router-route-card {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.router-link-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 124px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: var(--brand);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    background 0.22s ease;
+}
+
+.router-link-button:hover {
+  background: var(--brand-deep);
+  transform: translateY(-2px);
+}
+
+.router-notes {
+  padding: 24px 22px;
+  display: grid;
+  gap: 12px;
+}
+
+.router-copy:hover,
+.router-hero-card:hover,
+.router-concept-card:hover,
+.router-route-card:hover,
+.router-notes:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 42px rgba(15, 23, 42, 0.1);
+  border-color: rgba(20, 184, 166, 0.22);
+}
+
+.router-hero > :nth-child(1) {
+  animation-delay: 0.08s;
+}
+
+.router-hero > :nth-child(2) {
+  animation-delay: 0.16s;
+}
+
+.router-concepts-grid > :nth-child(1) {
+  animation-delay: 0.22s;
+}
+
+.router-concepts-grid > :nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.router-concepts-grid > :nth-child(3) {
+  animation-delay: 0.38s;
+}
+
+.router-concepts-grid > :nth-child(4) {
+  animation-delay: 0.46s;
+}
+
+.router-routes-list > :nth-child(1) {
+  animation-delay: 0.24s;
+}
+
+.router-routes-list > :nth-child(2) {
+  animation-delay: 0.32s;
+}
+
+.router-routes-list > :nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.router-routes-list > :nth-child(4) {
+  animation-delay: 0.48s;
+}
+
+.router-notes {
+  animation-delay: 0.56s;
+}
+
+@keyframes router-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .router-copy,
+  .router-hero-card,
+  .router-concept-card,
+  .router-route-card,
+  .router-notes {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 920px) {
+  .router-hero,
+  .router-concepts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .router-copy,
+  .router-hero-card,
+  .router-concept-card,
+  .router-route-card,
+  .router-notes {
+    border-radius: 22px;
+  }
+
+  .router-copy,
+  .router-hero-card,
+  .router-concept-card,
+  .router-route-card,
+  .router-notes {
+    padding: 22px 18px;
+  }
+}

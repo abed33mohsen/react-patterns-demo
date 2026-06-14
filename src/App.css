@@ -1,0 +1,33 @@
+.app-main {
+  min-height: calc(100vh - 180px);
+  animation: app-page-fade 0.55s ease-out;
+}
+
+.app-main,
+.app-main * {
+  transition:
+    background-color 0.24s ease,
+    color 0.24s ease,
+    border-color 0.24s ease,
+    box-shadow 0.24s ease;
+}
+
+@keyframes app-page-fade {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-main,
+  .app-main * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="avatarTitle avatarDesc">
+  <title id="avatarTitle">Profile avatar</title>
+  <desc id="avatarDesc">Abstract profile portrait with teal background.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#2dd4bf"/>
+    </linearGradient>
+    <linearGradient id="shape" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="48" fill="url(#bg)"/>
+  <circle cx="300" cy="84" r="54" fill="rgba(255,255,255,0.16)"/>
+  <circle cx="104" cy="322" r="70" fill="rgba(255,255,255,0.10)"/>
+  <circle cx="200" cy="150" r="74" fill="url(#shape)"/>
+  <path d="M102 330c18-54 63-88 98-88s80 34 98 88" fill="url(#shape)"/>
+</svg>

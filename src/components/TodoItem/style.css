@@ -1,0 +1,90 @@
+.todo-card {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow-soft);
+  animation: todo-card-rise 0.72s ease-out both;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease;
+}
+
+.todo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 42px rgba(15, 23, 42, 0.1);
+  border-color: rgba(20, 184, 166, 0.22);
+}
+
+.todo-link {
+  display: block;
+  padding: 18px 20px;
+  text-decoration: none;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 0 20px 18px;
+}
+
+.todo-action-button {
+  border: none;
+  border-radius: 12px;
+  background: var(--surface-soft);
+  color: var(--text-strong);
+  padding: 10px 12px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.todo-action-button.danger {
+  background: var(--danger-soft);
+  color: var(--danger-text);
+}
+
+.todo-copy h3 {
+  margin: 0 0 10px;
+  color: var(--text-strong);
+}
+
+.todo-status {
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--status-warning-bg);
+  color: var(--status-warning-text);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.todo-status.complete {
+  background: var(--status-success-bg);
+  color: var(--status-success-text);
+}
+
+.todo-card.done {
+  opacity: 0.95;
+  background: linear-gradient(180deg, var(--card-bg) 0%, var(--surface-elevated) 100%);
+}
+
+@keyframes todo-card-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .todo-card {
+    animation: none !important;
+  }
+}

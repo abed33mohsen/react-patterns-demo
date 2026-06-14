@@ -1,0 +1,229 @@
+.todo-page {
+  width: min(1160px, 92%);
+  margin: 0 auto;
+  padding: 28px 0 56px;
+}
+
+.todo-hero {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 18px;
+  margin-bottom: 22px;
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top right, rgba(245, 158, 11, 0.14), transparent 28%),
+    linear-gradient(135deg, #ffffff 0%, #f3faf8 100%);
+}
+
+.todo-hero-copy h1 {
+  margin: 0 0 12px;
+  color: var(--text-strong);
+}
+
+.todo-hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.todo-stats {
+  display: grid;
+  gap: 12px;
+}
+
+.todo-stat-card {
+  padding: 18px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.todo-stat-card.accent {
+  background: rgba(15, 118, 110, 0.08);
+  border-color: rgba(15, 118, 110, 0.16);
+}
+
+.todo-stat-card strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--text-strong);
+  font-size: 1.35rem;
+}
+
+.todo-stat-card span {
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+
+.todo-panel {
+  padding: 34px 30px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top right, rgba(20, 184, 166, 0.14), transparent 28%),
+    #ffffff;
+  box-shadow: var(--shadow-soft);
+  animation: todo-fade-up 0.72s ease-out both;
+}
+
+.todo-panel-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.todo-kicker {
+  margin: 0 0 10px;
+  color: var(--brand);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.todo-panel h2 {
+  margin: 0 0 12px;
+  color: var(--text-strong);
+}
+
+.todo-text {
+  margin: 0 0 22px;
+  color: var(--text-soft);
+}
+
+.todo-form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.todo-panel .toast-message {
+  margin-bottom: 20px;
+}
+
+.todo-form input {
+  flex: 1 1 280px;
+  padding: 12px 14px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 14px;
+  background: #f8fafc;
+  color: var(--text-strong);
+  font: inherit;
+}
+
+.todo-form input:focus {
+  outline: none;
+  border-color: rgba(15, 118, 110, 0.45);
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.08);
+}
+
+.todo-form button {
+  border: none;
+  border-radius: 14px;
+  background: var(--brand);
+  color: #ffffff;
+  padding: 12px 18px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    background 0.22s ease;
+}
+
+.todo-form button:hover {
+  background: var(--brand-deep);
+  transform: translateY(-2px);
+}
+
+.todo-controls {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 0.8fr auto;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.todo-controls input,
+.todo-controls select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 14px;
+  background: #f8fafc;
+  color: var(--text-strong);
+  font: inherit;
+}
+
+.todo-results-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(15, 118, 110, 0.08);
+  color: var(--brand);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.todo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.todo-clear-button {
+  min-width: 150px;
+}
+
+.todo-empty-state {
+  grid-column: 1 / -1;
+}
+
+@keyframes todo-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .todo-panel {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .todo-hero,
+  .todo-panel {
+    padding: 24px 20px;
+    border-radius: 22px;
+  }
+
+  .todo-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .todo-form button,
+  .todo-clear-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 860px) {
+  .todo-hero {
+    grid-template-columns: 1fr;
+  }
+}
